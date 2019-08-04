@@ -81,15 +81,15 @@
 
   // Return all elements of an array that pass a truth test.
   _.filter = function(collection, test) {
-    const filteredArr = [];
+    const filteredItems = [];
 
     _.each(collection, function(item) {
       if (test(item)) {
-        filteredArr.push(item);
+        filteredItems.push(item);
       }
     });
 
-    return filteredArr;
+    return filteredItems;
   };
 
   // Return all elements of an array that don't pass a truth test.
@@ -104,15 +104,15 @@
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array, isSorted, iterator) {
-    const uniqArr = []
+    const uniqItems = []
 
     _.each(array, function(item) {
-      if (_.indexOf(uniqArr, item) === -1) {
-        uniqArr.push(item);
+      if (_.indexOf(uniqItems, item) === -1) {
+        uniqItems.push(item);
       }
     });
 
-    return uniqArr;
+    return uniqItems;
   };
 
 
@@ -122,13 +122,13 @@
     // like each(), but in addition to running the operation on all
     // the members, it also maintains an array of results.
 
-    const mapping = [];
+    const mappedItems = [];
 
     _.each(collection, function(item) {
-      mapping.push(iterator(item));
+      mappedItems.push(iterator(item));
     });
 
-    return mapping;
+    return mappedItems;
   };
 
   /*
