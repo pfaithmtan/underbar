@@ -104,6 +104,15 @@
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array, isSorted, iterator) {
+    const uniqArr = []
+
+    _.each(array, function(item) {
+      if (_.indexOf(uniqArr, item) === -1) {
+        uniqArr.push(item);
+      }
+    });
+
+    return uniqArr;
   };
 
 
