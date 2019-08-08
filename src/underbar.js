@@ -355,6 +355,17 @@
   // input array. For a tip on how to make a copy of an array, see:
   // http://mdn.io/Array.prototype.slice
   _.shuffle = function(array) {
+    // based on Fisher-Yates algorithm
+    const shuffledArr = array.slice();
+
+    for (let i = shuffledArr.length - 1; i > 0; i--) {
+      const newIndex = Math.floor(Math.random() * (i + 1));
+      const current = shuffledArr[i];
+      shuffledArr[i] = shuffledArr[newIndex];
+      shuffledArr[newIndex] = current;
+    }
+
+    return shuffledArr;
   };
 
 
